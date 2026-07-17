@@ -3,13 +3,19 @@ import AuthLayout from "../../components/layout/AuthLayout";
 import Input from "../../components/common/Input";
 import Button from "../../components/common/Button";
 
-export default function LoginPage() {
+export default function SignupPage() {
   return (
     <AuthLayout
-      title="Welcome Back"
-      subtitle="Sign in to continue using DocuMind"
+      title="Create an Account"
+      subtitle="Join DocuMind and start chatting with your documents"
     >
       <form className="space-y-5">
+
+        <Input
+          label="Full Name"
+          placeholder="Enter your full name"
+        />
+
         <Input
           label="Email"
           type="email"
@@ -19,21 +25,28 @@ export default function LoginPage() {
         <Input
           label="Password"
           type="password"
-          placeholder="Enter your password"
+          placeholder="Create a password"
+        />
+
+        <Input
+          label="Confirm Password"
+          type="password"
+          placeholder="Confirm your password"
         />
 
         <Button type="submit">
-          Login
+          Create Account
         </Button>
         <p className="text-center text-slate-600">
-  Don't have an account?{" "}
+  Already have an account?{" "}
   <Link
-    href="/signup"
+    href="/login"
     className="text-blue-600 font-semibold hover:underline"
   >
-    Sign Up
+    Login
   </Link>
 </p>
+
       </form>
     </AuthLayout>
   );
