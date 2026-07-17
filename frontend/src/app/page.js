@@ -1,15 +1,13 @@
 import Navbar from "../components/layout/Navbar";
+import Hero from "../components/landing/Hero";
+import Features from "../components/landing/Features";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-
-      <main className="min-h-screen flex items-center justify-center">
-        <h1 className="text-6xl font-bold">
-          Hero Section Coming Next 🚀
-        </h1>
-      </main>
+      <Hero />
+      <Features />
     </>
-);
+  );
 }
