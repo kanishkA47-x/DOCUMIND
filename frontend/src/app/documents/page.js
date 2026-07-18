@@ -1,10 +1,11 @@
 import DashboardLayout from "../../components/layout/DashboardLayout";
-import DocumentsList from "../../components/documents/DocumentsList";
 import SearchDocuments from "../../components/documents/SearchDocuments";
+import DocumentSkeleton from "../../components/skeletons/DocumentSkeleton";
 
 export default function DocumentsPage() {
   return (
     <DashboardLayout>
+
       <div className="max-w-6xl mx-auto">
 
         <h1 className="text-4xl font-bold">
@@ -19,11 +20,16 @@ export default function DocumentsPage() {
           <SearchDocuments />
         </div>
 
-        <div className="mt-8">
-          <DocumentsList />
+        <div className="mt-8 space-y-5">
+
+          <DocumentSkeleton />
+          <DocumentSkeleton />
+          <DocumentSkeleton />
+
         </div>
 
       </div>
+
     </DashboardLayout>
   );
 }

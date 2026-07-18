@@ -1,15 +1,14 @@
+import EmptyState from "../common/EmptyState";
+
 export default function RecentDocuments() {
   return (
-    <div className="bg-white rounded-2xl shadow-md p-6 mt-8">
-
-      <h2 className="text-2xl font-semibold">
-        Recent Documents
-      </h2>
-
-      <p className="text-slate-500 mt-4">
-        No documents uploaded yet.
-      </p>
-
+    <div className="mt-8">
+      <EmptyState
+        icon="📄"
+        title="No Documents Yet"
+        description="Upload your first document to start chatting with AI."
+        buttonText="Upload Document"
+      />
     </div>
   );
 }

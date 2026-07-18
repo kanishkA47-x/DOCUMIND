@@ -1,5 +1,5 @@
 import DashboardLayout from "../../components/layout/DashboardLayout";
-import DashboardCard from "../../components/dashboard/DashboardCard";
+import SkeletonCard from "../../components/skeletons/SkeletonCard";
 import QuickActions from "../../components/dashboard/QuickActions";
 import RecentDocuments from "../../components/dashboard/RecentDocuments";
 
@@ -18,10 +18,10 @@ export default function DashboardPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
 
-          <DashboardCard title="Documents" value="0" />
-          <DashboardCard title="Chats" value="0" />
-          <DashboardCard title="Uploads" value="0" />
-          <DashboardCard title="Storage" value="0 MB" />
+          <SkeletonCard />
+          <SkeletonCard />
+          <SkeletonCard />
+          <SkeletonCard />
 
         </div>
 

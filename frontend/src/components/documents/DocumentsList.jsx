@@ -1,44 +1,24 @@
-import DocumentCard from "./DocumentCard";
+import EmptyState from "../common/EmptyState";
 
 export default function DocumentsList() {
+  const documents = [];
 
-  const documents = [
-
-    {
-      id: 1,
-      name: "AI_Report.pdf",
-      size: "3.2 MB",
-      uploadedAt: "Today",
-    },
-
-    {
-      id: 2,
-      name: "Research_Paper.pdf",
-      size: "1.8 MB",
-      uploadedAt: "Yesterday",
-    },
-
-    {
-      id: 3,
-      name: "Resume.pdf",
-      size: "450 KB",
-      uploadedAt: "2 days ago",
-    },
-
-  ];
+  if (documents.length === 0) {
+    return (
+      <EmptyState
+        icon="📂"
+        title="No Documents Found"
+        description="Your uploaded documents will appear here."
+        buttonText="Upload Document"
+      />
+    );
+  }
 
   return (
-    <div className="space-y-6">
-
+    <div className="space-y-5">
       {documents.map((doc) => (
-        <DocumentCard
-          key={doc.id}
-          name={doc.name}
-          size={doc.size}
-          uploadedAt={doc.uploadedAt}
-        />
+        <div key={doc.id}>{doc.name}</div>
       ))}
-
     </div>
   );
 }
