@@ -5,29 +5,33 @@ export default function DocumentItem({
   uploadedAt,
 }) {
   return (
-    <div className="bg-white rounded-2xl shadow-md p-6 flex items-center justify-between">
+    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
 
-      <div>
+      <div className="flex justify-between items-center">
 
-        <h3 className="text-xl font-semibold">
-          {name}
-        </h3>
+        <div>
 
-        <p className="text-slate-500 mt-1">
-          Uploaded {uploadedAt}
-        </p>
+          <h2 className="text-xl font-bold">
+            📄 {name}
+          </h2>
 
-      </div>
+          <p className="text-slate-500 mt-2">
+            Uploaded {uploadedAt}
+          </p>
 
-      <div className="flex gap-3">
+        </div>
 
-        <Button size="sm">
-          Open
-        </Button>
+        <div className="flex gap-3">
 
-        <Button variant="secondary" size="sm">
-          Chat
-        </Button>
+          <Button size="sm">
+            Open
+          </Button>
+
+          <Button variant="secondary" size="sm">
+            Chat
+          </Button>
+
+        </div>
 
       </div>
 
