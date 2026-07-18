@@ -1,8 +1,9 @@
 import Link from "next/link";
+import ProfileCard from "./ProfileCard";
 
 export default function Sidebar() {
   return (
-    <aside className="w-64 min-h-screen bg-slate-900 text-white p-6">
+    <aside className="w-64 min-h-screen bg-slate-900 text-white p-6 flex flex-col">
 
       <h1 className="text-3xl font-bold mb-10">
         🧠 DocuMind
@@ -46,6 +47,8 @@ export default function Sidebar() {
         </Link>
 
       </nav>
+
+      <ProfileCard />
 
     </aside>
   );
