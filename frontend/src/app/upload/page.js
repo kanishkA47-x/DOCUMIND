@@ -1,24 +1,25 @@
 import DashboardLayout from "../../components/layout/DashboardLayout";
-import FileUpload from "../../components/upload/FileUpload";
+import UploadArea from "../../components/upload/UploadArea";
+import SupportedFormats from "../../components/upload/SupportedFormats";
 
 export default function UploadPage() {
   return (
     <DashboardLayout>
 
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
 
         <h1 className="text-4xl font-bold">
           Upload Documents
         </h1>
 
-        <p className="text-slate-500 mt-2">
-          Add documents to your AI workspace.
+        <p className="text-slate-500 mt-2 mb-8">
+          Upload your documents and chat with them using AI.
         </p>
 
-        <div className="mt-10">
+        <UploadArea />
 
-          <FileUpload />
-
+        <div className="mt-8">
+          <SupportedFormats />
         </div>
 
       </div>
