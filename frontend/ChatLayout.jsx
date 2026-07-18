@@ -20,20 +20,22 @@ export default function ChatLayout() {
 
     if (!question.trim()) return;
 
-    setMessages((prev) => [
+    setMessages(prev => [
       ...prev,
       {
         sender: "user",
-        text: question,
+        text: question
       },
       {
         sender: "ai",
-        text: "This is a dummy AI response. Later this will come from the backend.",
-      },
+        text: "This is a dummy AI response. Later this will come from the backend."
+      }
     ]);
+
   }
 
   return (
+
     <div className="space-y-6">
 
       <ChatHeader />
@@ -43,11 +45,13 @@ export default function ChatLayout() {
       <div className="space-y-4 bg-slate-100 rounded-2xl p-6 min-h-[450px]">
 
         {messages.map((msg, index) => (
+
           <MessageBubble
             key={index}
             sender={msg.sender}
             message={msg.text}
           />
+
         ))}
 
       </div>
@@ -55,5 +59,6 @@ export default function ChatLayout() {
       <ChatInput onSend={sendMessage} />
 
     </div>
+
   );
 }
