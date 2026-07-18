@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 
 import ChatHeader from "./ChatHeader";
 import DocumentSelector from "./DocumentSelector";
+import ChatHistory from "./ChatHistory";
 import MessageBubble from "./MessageBubble";
 import ChatInput from "./ChatInput";
 import SuggestedQuestions from "./SuggestedQuestions";
@@ -54,28 +55,40 @@ export default function ChatLayout() {
   }
 
   return (
-    <div className="space-y-6">
-      <ChatHeader />
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
 
-      <DocumentSelector />
-
-      <SuggestedQuestions onSelect={sendMessage} />
-
-      <div className="space-y-4 bg-slate-100 rounded-2xl p-6 h-[500px] overflow-y-auto">
-        {messages.map((msg, index) => (
-          <MessageBubble
-            key={index}
-            sender={msg.sender}
-            message={msg.text}
-          />
-        ))}
-
-        {loading && <TypingIndicator />}
-
-        <div ref={chatEndRef}></div>
+      <div className="lg:col-span-1">
+        <ChatHistory />
       </div>
 
-      <ChatInput onSend={sendMessage} />
+      <div className="lg:col-span-3 space-y-6">
+
+        <ChatHeader />
+
+        <DocumentSelector />
+
+        <SuggestedQuestions onSelect={sendMessage} />
+
+        <div className="space-y-4 bg-slate-100 rounded-2xl p-6 h-[500px] overflow-y-auto">
+
+          {messages.map((msg, index) => (
+            <MessageBubble
+              key={index}
+              sender={msg.sender}
+              message={msg.text}
+            />
+          ))}
+
+          {loading && <TypingIndicator />}
+
+          <div ref={chatEndRef}></div>
+
+        </div>
+
+        <ChatInput onSend={sendMessage} />
+
+      </div>
+
     </div>
   );
 }
