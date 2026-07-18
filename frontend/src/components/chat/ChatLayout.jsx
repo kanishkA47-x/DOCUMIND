@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 
 import ChatHeader from "./ChatHeader";
+import DocumentSelector from "./DocumentSelector";
 import MessageBubble from "./MessageBubble";
 import ChatInput from "./ChatInput";
 import SuggestedQuestions from "./SuggestedQuestions";
@@ -29,7 +30,6 @@ export default function ChatLayout() {
   function sendMessage(question) {
     if (!question.trim()) return;
 
-    // Add user's message
     setMessages((prev) => [
       ...prev,
       {
@@ -40,7 +40,6 @@ export default function ChatLayout() {
 
     setLoading(true);
 
-    // Simulate AI response
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
@@ -57,6 +56,8 @@ export default function ChatLayout() {
   return (
     <div className="space-y-6">
       <ChatHeader />
+
+      <DocumentSelector />
 
       <SuggestedQuestions onSelect={sendMessage} />
 
